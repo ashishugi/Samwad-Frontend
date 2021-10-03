@@ -5,13 +5,14 @@ import { Provider } from "react-redux";
 
 import "./index.css";
 import App from "./components/App/App";
+import Register from "./components/Register/Register";
 
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <Register />
     </React.StrictMode>
   </Provider>,
   document.getElementById("root")
