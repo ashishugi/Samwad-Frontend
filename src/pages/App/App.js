@@ -8,7 +8,7 @@ function App() {
     //   <Button>Submit</Button>
     // </div>
     <>
-    <Login />
+      <Login />
     </>
   );
 }

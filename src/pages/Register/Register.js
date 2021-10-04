@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import Form from "../Form/Form";
+import Form from "../../components/Form/Form";
 import { Wrapper } from "./style";
 import pic from "../../assets/images/register.svg";
 
