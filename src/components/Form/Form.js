@@ -6,6 +6,9 @@ import { Wrapper } from "./style";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Snackbar from "@mui/material/Snackbar";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 import PasswordInputField from "../PasswordInputField/PasswordInputField";
 import LoginWithOtherButton from "../LoginWithOtherButton/LoginWithOtherButton";
@@ -18,6 +21,9 @@ class Form extends React.Component {
       email: null,
       password: null,
       confirmPassword: null,
+      open: false,
+      vertical: "top",
+      horizontal: "center",
       checkboxLabel:
         "By creating an account, you agree to the Terms of Service and conditions, and Privacy Policy",
       error: null,
@@ -25,32 +31,85 @@ class Form extends React.Component {
     };
   }
 
+  handleClick = (e) => {
+    this.setState({
+      open: true,
+    });
+    e.preventDefault();
+  };
+  handleClose = (e) => {
+    this.setState({
+      open: false,
+    });
+    e.preventDefault();
+  };
+  onChangePassword = (password) => {
+    this.setState({
+      password: password,
+    });
+  };
+  onChangeConfirmPassword = (password) => {
+    this.setState({
+      confirmPassword: password,
+    });
+  };
+  validateEmail = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
   handleSubmit = (e) => {
     const { userName, email, password, confirmPassword, checked } = this.state;
-    if (userName || email || password || confirmPassword) {
+    this.setState({
+      error: null,
+    });
+    if (
+      userName === null ||
+      email === null ||
+      password === null ||
+      confirmPassword === null
+    ) {
       this.setState({
         error: "fields are empty",
       });
-    }
-    if (password !== confirmPassword) {
+    } else if (!this.validateEmail(email)) {
+      this.setState({
+        error: "email not valid",
+      });
+    } else if (password !== confirmPassword) {
       this.setState({
         error: "password and confirm password do not match",
       });
-    }
-    if (checked === false) {
+    } else if (checked === false) {
       this.setState({
         error: "agree the terms and conditions",
       });
     }
     if (this.state.error === null) {
-      console.log("successful ", this.state);
+      //
     } else {
       console.log("error :", this.state.error);
     }
     e.preventDefault();
   };
+
+  action() {
+    return (
+      <React.Fragment>
+        <IconButton
+          size="small"
+          aria-label="close"
+          color="inherit"
+          onClick={this.handleClose}
+        >
+          <CloseIcon fontSize="small" />
+        </IconButton>
+      </React.Fragment>
+    );
+  }
   render() {
     console.log(this.state.checked);
+    const { vertical, horizontal } = this.state;
     return (
       <Wrapper>
         <h1 className="heading">Create account</h1>
@@ -76,6 +135,7 @@ class Form extends React.Component {
                 type="email"
                 value={this.state.email}
                 onChange={(e) => this.setState({ email: e.target.value })}
+                required
               />
             </div>
           </div>
@@ -83,16 +143,12 @@ class Form extends React.Component {
             <PasswordInputField
               password={this.state.password}
               name="Password"
-              value={this.state.password}
-              onChange={(e) => this.setState({ password: e.target.value })}
+              onChange={this.onChangePassword}
             />
             <PasswordInputField
               password={this.state.confirmPassword}
               name="Confirm"
-              value={this.state.confirmPassword}
-              onChange={(e) =>
-                this.setState({ confirmPassword: e.target.value })
-              }
+              onChange={this.onChangeConfirmPassword}
             />
           </div>
           <div className="checkbox">
@@ -109,7 +165,10 @@ class Form extends React.Component {
           </div>
           <div className="button">
             <button
-              onClick={(e) => this.handleSubmit(e)}
+              onClick={(e) => {
+                this.handleSubmit(e);
+                this.handleClick(e);
+              }}
               disabled={!this.state.checked}
               style={
                 !this.state.checked
@@ -119,6 +178,18 @@ class Form extends React.Component {
             >
               Create account
             </button>
+            {this.state.error === null ? (
+              ""
+            ) : (
+              <Snackbar
+                anchorOrigin={{ vertical, horizontal }}
+                open={this.state.open}
+                onClose={this.handleClose}
+                message={this.state.error}
+                key={this.state.vertical + this.state.horizontal}
+                action={this.action()}
+              />
+            )}
           </div>
           <div className="horizontal-line">
             <div className="first-line">
