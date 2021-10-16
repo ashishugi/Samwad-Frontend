@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import "./index.css";
 import App from "./pages/App/App";
 import Register from "./pages/Register/Register";
+import Posts from "./pages/Posts/Posts";
 
 const store = configureStore();
 
@@ -13,7 +14,8 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       {/* <App /> */}
-      <Register />
+      <Posts />
+      {/* <Register /> */}
     </React.StrictMode>
   </Provider>,
   document.getElementById("root")
