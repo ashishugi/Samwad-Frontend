@@ -1,9 +1,11 @@
+//components
+import PostCenterCirularImage from "../PostCenterCirularImage/PostCenterCirularImage";
 import { Wrapper } from "./style";
 
 const PostCenterTopNavbar = () => {
   return (
     <Wrapper>
-      <h1>Hi</h1>
+      <PostCenterCirularImage />
     </Wrapper>
   );
 };
