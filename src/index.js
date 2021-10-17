@@ -13,8 +13,8 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
-      {/* <Posts /> */}
+      {/* <App /> */}
+      <Posts />
       {/* <Register /> */}
     </React.StrictMode>
   </Provider>,
