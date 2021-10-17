@@ -6,7 +6,7 @@ const paddingTop = 1.5;
 const Wrapper = styled.div`
   background-color: #f2f8fe;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   .horizontal-line {
     display: flex;
     flex-direction: row;
