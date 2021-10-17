@@ -1,6 +1,6 @@
 import { Button } from "./style";
 import Login from "../Login/Login";
-import Profile from "../profile/profile"
+import Profile from "../profile/profile";
 
 function App() {
   return (
@@ -9,8 +9,8 @@ function App() {
     //   <Button>Submit</Button>
     // </div>
     <>
-      {/* <Login /> */}
-      <Profile />
+      <Login />
+      {/* <Profile /> */}
     </>
   );
 }
