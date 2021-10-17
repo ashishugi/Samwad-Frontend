@@ -4,6 +4,7 @@ const paddingLeft = 1.5;
 const paddingTop = 1.5;
 const Wrapper = styled.div`
   padding: ${paddingTop}rem ${paddingLeft}rem;
+
   height: 100%;
   .feed-card {
     display: flex;
