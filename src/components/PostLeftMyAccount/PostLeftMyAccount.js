@@ -4,14 +4,14 @@ import { Wrapper } from "./style";
 const PostLeftMyAccount = () => {
   return (
     <Wrapper>
-      <div className="header">
+      {/* <div className="header">
         <div>
           <p>Account</p>
         </div>
         <div className="icon">
           <ArrowDropDownIcon />
         </div>
-      </div>
+      </div> */}
       <div className="account">
         <div className="account-image">
           <img

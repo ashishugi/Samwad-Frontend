@@ -4,7 +4,7 @@ const leftSidepadding = 1.5;
 
 const Wrapper = styled.div`
   .account {
-    padding: 0 ${leftSidepadding}rem;
+    /* padding: 0 ${leftSidepadding}rem; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  .header {
+  /* .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
       font-size: 1.1rem;
       font-family: sans-serif;
     }
-  }
+  } */
 `;
 
 export { Wrapper };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const PaddingTop = 1.5;
 const Wrapper = styled.div`
   padding: ${PaddingTop}rem 0;
+  cursor: pointer;
   .post-info {
     margin: 0.6rem 0;
     display: flex;

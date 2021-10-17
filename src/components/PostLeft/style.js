@@ -6,13 +6,30 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   /* display: flex; */
-  .header {
+  .account {
+    padding: 0 0.8rem; // top-bottom , left-right
+  }
+  .heading {
     padding: 1.5rem 1.5rem; // top-bottom , left-right
     /* text-align: center; */
     color: #ae7dff;
     font-size: 1.5rem;
     font-weight: 650;
     font-family: cursive;
+  }
+  .header {
+    display: flex;
+    padding: 1.5rem 1.5rem; // top-bottom , left-right
+    flex-direction: row;
+    justify-content: space-between;
+    .icon {
+      color: black;
+    }
+    p {
+      color: black;
+      font-size: 1.1rem;
+      font-family: sans-serif;
+    }
   }
 `;
 
