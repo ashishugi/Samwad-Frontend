@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router";
 
 import Wrapper from "./style";
 import Button from "@material-ui/core/Button";
@@ -39,6 +40,12 @@ const Login = (props) => {
   useEffect(() => {
     console.log("inProgress : ", inProgress, props);
   }, [inProgress, inputField.email]);
+
+  const { from } = props.location.state || { from: { pathname: "/" } };
+  const { isLoggedIn } = props.login;
+  if (isLoggedIn) {
+    return <Redirect to={from} />;
+  }
   return (
     <>
       <Wrapper>
