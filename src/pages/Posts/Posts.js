@@ -1,9 +1,9 @@
 import React from "react";
 
 //components
-import PostLeft from "../../components/PostLeft/PostLeft";
-import PostRight from "../../components/PostRight/PostRight";
-import PostCenter from "../../components/PostCenter/PostCenter";
+import PostLeft from "./components/PostLeft/PostLeft";
+import PostRight from "./components/PostRight/PostRight";
+import PostCenter from "./components/PostCenter/PostCenter";
 
 import { Wrapper } from "./style";
 
