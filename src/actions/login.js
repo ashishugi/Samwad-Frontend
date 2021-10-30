@@ -1,4 +1,22 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED } from "./actionTypes";
+import {
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGIN_FAILED,
+  AUTHENTICATE_USER,
+  LOGOUT,
+} from "./actionTypes";
+
+export const logout = () => {
+  return {
+    type: LOGOUT,
+  };
+};
+export const authUser = (user) => {
+  return {
+    type: AUTHENTICATE_USER,
+    user: user,
+  };
+};
 
 export const loginStart = () => {
   return {
@@ -28,6 +46,13 @@ export const login = (email, password) => {
     if (email === "a@a.com" && password === "123456") {
       setTimeout(() => {
         console.log("set time out 5 sec");
+        const user = {
+          email,
+          password,
+          _id: 123456,
+          name: "Aman",
+        };
+        localStorage.setItem("loginDetails", JSON.stringify(user));
         dispatch(loginSuccess({ email, password }));
       }, 5000);
       return;
