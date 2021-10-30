@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 // components
 import Form from "../../components/Form/Form";
@@ -16,6 +19,10 @@ class Register extends React.Component {
     };
   }
   render() {
+    const { isLoggedIn } = this.props.login;
+    if (isLoggedIn) {
+      return <Redirect to="/" />;
+    }
     return (
       <Wrapper>
         <div className="left">
@@ -24,9 +31,9 @@ class Register extends React.Component {
         <div className="right">
           <div className="login">
             <div className="account">Already have an account?</div>
-            <a href="#" className="login-btn">
+            <Link to="/login" className="login-btn">
               Login
-            </a>
+            </Link>
           </div>
           <Form />
         </div>
@@ -35,4 +42,9 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+const mapStateToProps = (state) => {
+  return {
+    login: state.login,
+  };
+};
+export default connect(mapStateToProps)(Register);

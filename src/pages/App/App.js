@@ -17,8 +17,27 @@ import Register from "../Register/Register";
 import { authUser } from "../../actions/login";
 import _404 from "../_404/_404";
 
-const Feed = () => {
-  return <Redirect to="/feed" />;
+const PrivateRoute = (privateRouteProps) => {
+  const { isLoggedIn, path, component: Component } = privateRouteProps;
+  return (
+    <Route
+      path={path}
+      render={(props) => {
+        return isLoggedIn ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: {
+                from: props.location,
+              },
+            }}
+          />
+        );
+      }}
+    />
+  );
 };
 class App extends React.Component {
   constructor(props) {
@@ -26,9 +45,11 @@ class App extends React.Component {
   }
   componentDidMount() {
     let loginDetails = localStorage.getItem("loginDetails");
-    console.log("login verified App.js");
-    loginDetails = JSON.parse(loginDetails);
-    this.props.dispatch(authUser(loginDetails));
+    if (loginDetails) {
+      console.log("login verified App.js");
+      loginDetails = JSON.parse(loginDetails);
+      this.props.dispatch(authUser(loginDetails));
+    }
   }
   render() {
     return (
@@ -40,6 +61,11 @@ class App extends React.Component {
           <Route exact path="/signup" component={Register}></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/profile" component={Profile}></Route>
+          {/* <PrivateRoute
+            path="/settings"
+            Component={Profile}
+            isLoggedIn={this.props.login.isLoggedIn}
+          /> */}
           <Route exact path="**">
             <_404 />
           </Route>

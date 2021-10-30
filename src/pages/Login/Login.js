@@ -16,6 +16,7 @@ import PasswordInputField from "../../components/PasswordInputField/PasswordInpu
 
 //Actions
 import { login } from "../../actions/login";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const { inProgress, error } = props.login;
@@ -44,6 +45,7 @@ const Login = (props) => {
   const { from } = props.location.state || { from: { pathname: "/" } };
   const { isLoggedIn } = props.login;
   if (isLoggedIn) {
+    console.log("here");
     return <Redirect to={from} />;
   }
   return (
@@ -56,14 +58,19 @@ const Login = (props) => {
                 <div className="top">
                   <div className="para" style={{ width: "100%" }}>
                     <p>
-                      Have an account?
+                      Do not have account ?
                       <span
                         style={{
-                          color: "rgba(146,227,169,1)",
+                          color: "#51b26d",
                           marginLeft: ".5rem",
                         }}
                       >
-                        Sign in
+                        <Link
+                          to="/signup"
+                          style={{ textDecoration: "none", color: "#51b26d" }}
+                        >
+                          Create
+                        </Link>
                       </span>
                     </p>
                   </div>

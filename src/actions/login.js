@@ -3,8 +3,14 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILED,
   AUTHENTICATE_USER,
+  LOGOUT,
 } from "./actionTypes";
 
+export const logout = () => {
+  return {
+    type: LOGOUT,
+  };
+};
 export const authUser = (user) => {
   return {
     type: AUTHENTICATE_USER,
@@ -48,7 +54,7 @@ export const login = (email, password) => {
         };
         localStorage.setItem("loginDetails", JSON.stringify(user));
         dispatch(loginSuccess({ email, password }));
-      }, 2000);
+      }, 5000);
       return;
     }
     if (email !== "a@a.com") {

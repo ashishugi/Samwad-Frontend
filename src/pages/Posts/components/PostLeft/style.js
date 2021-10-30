@@ -32,6 +32,9 @@ const Wrapper = styled.div`
     justify-content: space-between;
     .icon {
       color: black;
+      cursor: pointer;
+      color: #ae7dff;
+      margin-left: auto;
     }
     p {
       color: black;

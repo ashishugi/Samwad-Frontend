@@ -12,5 +12,16 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-export { Wrapper };
+const notLoggedWrapper = styled.div`
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  .page-donot-exist { 
+    h1 {
+      text-align: center;
+      align-items: center;
+    }
+  }
+`;
+export { Wrapper, notLoggedWrapper };

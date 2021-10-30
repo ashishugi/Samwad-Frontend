@@ -3,6 +3,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILED,
   AUTHENTICATE_USER,
+  LOGOUT,
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -32,6 +33,12 @@ export default function login(state = initialState, action) {
         isLoggedIn: false,
         inProgress: false,
         error: action.error,
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: {},
       };
     case AUTHENTICATE_USER:
       return {
