@@ -1,7 +1,7 @@
 //components
 import PostCenterTopNavbar from "../PostCenterTopNavbar/PostCenterTopNavbar";
 import PostCenterFeed from "../PostCenterFeed/PostCenterFeed";
-import MobileViewNavbar from "../MobileViewNavbar/MobileViewNavbar";
+import MobileViewNavbar from "../../../../components/MobileViewNavbar/MobileViewNavbar";
 
 import { Wrapper } from "./style";
 

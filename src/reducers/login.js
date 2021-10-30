@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isLoggedIn: false,
-  inProcess: false,
+  inProgress: false,
   user: {},
   error: null,
 };
@@ -15,18 +15,19 @@ export default function login(state = initialState, action) {
   switch (action.type) {
     case LOGIN_START:
       return {
-        inProcess: true,
+        inProgress: true,
       };
     case LOGIN_SUCCESS:
       return {
         isLoggedIn: true,
-        inProcess: false,
+        inProgress: false,
         user: action.user,
       };
     case LOGIN_FAILED:
       return {
-          isLoggedIn:false,
-          
+        isLoggedIn: false,
+        inProgress: false,
+        error: action.error,
       };
     default:
       return state;
