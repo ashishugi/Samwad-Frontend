@@ -57,9 +57,11 @@ export const login = (email, password) => {
       }, 5000);
       return;
     }
-    if (email !== "a@a.com") {
-      dispatch(loginFailed("Login failed : email do not match"));
-    }
-    dispatch(loginFailed("Login failed : password do not match"));
+    setTimeout(() => {
+      if (email !== "a@a.com") {
+        dispatch(loginFailed("Login failed : email do not match"));
+      }
+      dispatch(loginFailed("Login failed : password do not match"));
+    }, 5000);
   };
 };
