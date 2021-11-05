@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { lightModeColor, DarkModeColor } from "../../../../assets/styles/style";
 
 const leftSidepadding = 1.5;
 
@@ -8,6 +9,7 @@ const Wrapper = styled.div`
       font-size: 1.1rem;
       padding-left: ${leftSidepadding}rem;
       margin: 1rem 0;
+      color: ${(props) => props.theme.heading};
     }
     .navbar {
       display: flex;
@@ -25,9 +27,10 @@ const Wrapper = styled.div`
           margin-left: 1.2rem;
           font-size: 0.95rem;
           font-weight: 550;
+          color: ${(props) => props.theme.h};
         }
         .navbar-icon {
-          color: #ae7dff;
+          color: ${(props) => props.theme.icon};
         }
         display: flex;
         flex-direction: row;

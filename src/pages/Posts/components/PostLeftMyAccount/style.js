@@ -10,14 +10,16 @@ const Wrapper = styled.div`
     align-items: center;
     .account-info {
       padding: 0 0.5rem;
+      text-decoration: none;
       .user-name {
         font-size: 0.9rem;
         font-weight: 550;
+        color: ${(props) => props.theme.h};
       }
       .user-email {
         font-size: 0.7rem;
         font-weight: 550;
-        color: gray;
+        color: ${(props) => props.theme.smallText};
       }
     }
     .account-image {

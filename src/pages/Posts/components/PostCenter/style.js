@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import {
+  lightModeColor,
+  DarkModeColor,
+  currtheme,
+} from "../../../../assets/styles/style";
 
 const paddingLeft = 1.5;
 const paddingTop = 1.5;
 
 const Wrapper = styled.div`
-  background-color: #f2f8fe;
+  background-color: ${(props) => props.theme.primary};
   width: 100%;
   height: 100vh;
   @media only screen and (min-width: 1025px) {
@@ -23,7 +28,7 @@ const Wrapper = styled.div`
     .heading {
       padding: 1.5rem 1.5rem; // top-bottom , left-right
       /* text-align: center; */
-      color: #ae7dff;
+      color: ${(props) => props.theme.secondaryPrimary};
       font-size: 1.5rem;
       font-weight: 650;
       font-family: cursive;
@@ -37,10 +42,11 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     hr {
-      width: 90%;
+      width: 95%;
       text-align: center;
-      height: 1%;
-      border-top: 0.1rem solid #e1e1ea;
+      height: 0.01rem;
+      color: ${(props) => props.theme.secondaryPrimary};
+      /* border-top: 0.1rem solid #e1e1ea; */
     }
   }
 `;

@@ -12,12 +12,12 @@ const Wrapper = styled.div`
   .notification {
     padding: 0.4rem 0.5rem;
     border-radius: 100%;
-    border: 1px solid #dee8f4;
-    background-color: #ffffff;
-    color: #a4b6e1;
+    border: 3px solid ${(props) => props.theme.border};
+    background-color: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.icon};
   }
   .search {
-    color: #a4b6e1;
+    color: ${(props) => props.theme.icon};
     position: relative;
     .search-icon {
       position: absolute;
@@ -28,8 +28,8 @@ const Wrapper = styled.div`
       border-radius: 1rem;
       height: 2.2rem;
       width: 80%;
-      border: 1px solid #dee8f4;
-      background-color: #ffffff;
+      border: 3px solid ${(props) => props.theme.border};
+      background-color: ${(props) => props.theme.primary};
       color: black;
       padding-left: 2.2rem;
       padding-right: 1rem;

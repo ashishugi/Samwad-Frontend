@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.secondPrimary};
   min-width: 220px;
   width: 100%;
   height: 100%;
@@ -16,11 +16,15 @@ const Wrapper = styled.div`
   /* display: flex; */
   .account {
     padding: 0 0.8rem; // top-bottom , left-right
+    Link {
+      text-decoration: none;
+    }
+    text-decoration: none;
   }
   .heading {
     padding: 1.5rem 1.5rem; // top-bottom , left-right
     /* text-align: center; */
-    color: #ae7dff;
+    color: ${(props) => props.theme.h};
     font-size: 1.5rem;
     font-weight: 650;
     font-family: cursive;
@@ -29,17 +33,19 @@ const Wrapper = styled.div`
     display: flex;
     padding: 1.5rem 1.5rem; // top-bottom , left-right
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     .icon {
       color: black;
       cursor: pointer;
-      color: #ae7dff;
+      color: ${(props) => props.theme.icon};
       margin-left: auto;
     }
     p {
-      color: black;
-      font-size: 1.1rem;
+      color: ${(props) => props.theme.heading};
+      font-size: 1rem;
       font-family: sans-serif;
+      font-weight: 650;
     }
   }
 `;
