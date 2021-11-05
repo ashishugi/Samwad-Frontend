@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { lightModeColor, DarkModeColor } from "../../../../assets/styles/style";
 const paddingLeft = 1.5;
 const paddingTop = 1.5;
 const Wrapper = styled.div`
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
       padding: 0.2rem 1rem;
       border-radius: 5px;
       color: white;
-      background-color: #a974ff;
+      background-color: ${lightModeColor.secondary};
       border: none;
       font-size: 0.8rem;
       font-weight: 600;

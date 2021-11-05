@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import Wrapper from "./style";
 import Button from "@material-ui/core/Button";
 import TextField from "@mui/material/TextField";
@@ -58,7 +60,7 @@ const Login = (props) => {
                 <div className="top">
                   <div className="para" style={{ width: "100%" }}>
                     <p>
-                      Do not have account ?
+                      Don't have account ?
                       <span
                         style={{
                           color: "#51b26d",
@@ -137,7 +139,16 @@ const Login = (props) => {
                         onClick={(e) => handleSubmit(e)}
                         disabled={inProgress ? true : false}
                       >
-                        submit
+                        {inProgress ? (
+                          <Box sx={{ display: "flex" }}>
+                            <CircularProgress
+                              style={{ color: "white" }}
+                              size={25.1}
+                            />
+                          </Box>
+                        ) : (
+                          " Submit"
+                        )}
                       </Button>
                       <br />
                       <h4>{error ? error : ""}</h4>

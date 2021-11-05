@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ThemeProvider } from "styled-components";
 
 import {
   BrowserRouter as Router,
@@ -9,7 +10,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { Button } from "./style";
+import { Themes } from "./style";
 import Login from "../Login/Login";
 import Profile from "../profile/profile";
 import Posts from "../Posts/Posts";
@@ -52,25 +53,28 @@ class App extends React.Component {
     }
   }
   render() {
+    const { theme } = this.props;
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Posts />
-          </Route>
-          <Route exact path="/signup" component={Register}></Route>
-          <Route exact path="/login" component={Login}></Route>
-          <Route exact path="/profile" component={Profile}></Route>
-          {/* <PrivateRoute
+      <ThemeProvider theme={Themes[theme]}>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Posts />
+            </Route>
+            <Route exact path="/signup" component={Register}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/profile" component={Profile}></Route>
+            {/* <PrivateRoute
             path="/settings"
             Component={Profile}
             isLoggedIn={this.props.login.isLoggedIn}
           /> */}
-          <Route exact path="**">
-            <_404 />
-          </Route>
-        </Switch>
-      </Router>
+            <Route exact path="**">
+              <_404 />
+            </Route>
+          </Switch>
+        </Router>
+      </ThemeProvider>
     );
   }
 }
@@ -78,6 +82,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     login: state.login,
+    theme: state.theme,
   };
 };
 export default connect(mapStateToProps)(App);

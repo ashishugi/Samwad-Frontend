@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { lightModeColor, DarkModeColor } from "../../../../assets/styles/style";
 
 const paddingLeft = 1.5;
 const paddingTop = 1.5;
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
     margin: 0 0.4rem;
     width: 4.5rem;
     height: 4.5rem;
-    border: 1.2px dashed #a974ff;
+    border: 1.7px dashed ${(props) => props.theme.h};
     border-radius: 100%;
     display: inline-block;
     span {
@@ -34,6 +35,9 @@ const Wrapper = styled.div`
       height: 100%;
       border-radius: 100%;
       padding: 0.3rem;
+    }
+    .add-post {
+      color: ${(props) => props.theme.heading};
     }
   }
 `;

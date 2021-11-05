@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: #f2f5ff;
+  background-color: ${(props) => props.theme.secondPrimary};
   min-width: 220px;
   width: 100%;
   height: 100vh;
