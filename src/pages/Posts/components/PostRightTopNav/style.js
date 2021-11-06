@@ -30,14 +30,14 @@ const Wrapper = styled.div`
       width: 80%;
       border: 3px solid ${(props) => props.theme.border};
       background-color: ${(props) => props.theme.primary};
-      color: black;
+      color: ${(props) => props.theme.h};
       padding-left: 2.2rem;
       padding-right: 1rem;
       font-weight: 550;
       font-size: 0.9rem;
       font-family: cursive;
       &::placeholder {
-        color: #a4b6e1;
+        color: ${(props) => props.theme.heading};
         font-weight: 550;
         font-size: 0.9rem;
       }
