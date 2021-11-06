@@ -4,6 +4,11 @@ const paddingLeft = 1.5;
 const paddingTop = 1.5;
 const Wrapper = styled.div`
   padding: ${paddingTop}rem ${paddingLeft}rem;
+  .header {
+    p {
+      color: ${(props) => props.theme.heading};
+    }
+  }
   .follow {
     display: flex;
     flex-direction: row;
