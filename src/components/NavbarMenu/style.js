@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { lightModeColor, DarkModeColor } from "../../../../assets/styles/style";
 
 const leftSidepadding = 1.5;
 

@@ -6,7 +6,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 import { Wrapper } from "./style";
 
-const PostLeftMenu = () => {
+const NavbarMenu = () => {
   return (
     <Wrapper>
       <div className="content">
@@ -48,4 +48,4 @@ const PostLeftMenu = () => {
   );
 };
 
-export default PostLeftMenu;
+export default NavbarMenu;

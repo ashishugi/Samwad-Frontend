@@ -1,6 +1,6 @@
 //components
 
-import PostLeftMyAccount from "../PostLeftMyAccount/PostLeftMyAccount";
+import PostLeftMyAccount from "../../../../components/MyAccount/MyAccount";
 
 import { Wrapper } from "./style";
 

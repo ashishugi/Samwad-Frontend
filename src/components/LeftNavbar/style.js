@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.secondPrimary};
-  min-width: 220px;
   width: 100%;
-  height: 100%;
+  min-width: 220px;
+  /* max-width: 300px; */
+  height: 100vh;
   @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
     /* For landscape layouts only */
     grid-template-columns: 1fr 3fr 1fr;
