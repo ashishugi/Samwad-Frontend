@@ -40,9 +40,6 @@ const Login = (props) => {
     props.dispatch(login(inputField.email, inputField.password));
     e.preventDefault();
   };
-  useEffect(() => {
-    console.log("inProgress : ", inProgress, props);
-  }, [inProgress, inputField.email]);
 
   const { from } = props.location.state || { from: { pathname: "/" } };
   const { isLoggedIn } = props.login;

@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import {
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -46,42 +48,30 @@ export const login = (email, password) => {
 
     // using static as of now
     const url = APIUrls.login();
-    // if (email === "a@a.com" && password === "123456") {
-    //   setTimeout(() => {
-    //     console.log("set time out 5 sec");
-    //     const user = {
-    //       email,
-    //       password,
-    //       _id: 123456,
-    //       name: "Aman",
-    //     };
-    //     localStorage.setItem("loginDetails", JSON.stringify(user));
-    //     dispatch(loginSuccess({ email, password }));
-    //   }, 5000);
-    //   return;
-    // }
-
-    fetch(url, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: {
-        email: email,
-        password: password,
-      },
-    }).then((res) => {
-      console.log("here at frontend login");
-      console.log(res);
-      dispatch(loginSuccess({ email, password }));
+    console.log(url);
+    const body =JSON.stringify({
+      email: email,
+      password: password
     });
-    setTimeout(() => {
-      if (email !== "a@a.com") {
-        dispatch(loginFailed("Login failed : email do not match"));
+    fetch(url,  {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body,
+    })
+    .then((response) => response.json())
+    .then((res)=>{
+      if(res.success) { 
+        localStorage.setItem('token', res.token);
+        dispatch(loginSuccess(res.token));
+        return;
       }
-      dispatch(loginFailed("Login failed : password do not match"));
-    }, 5000);
+      dispatch(loginFailed(res.message));
+    })
+    .catch((err)=>{
+      console.log('got error', err);
+      dispatch(loginFailed(err));
+    })
   };
 };
