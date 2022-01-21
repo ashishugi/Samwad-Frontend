@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 //components
-import PostLeft from "./components/PostLeft/PostLeft";
+import LeftNavbar from "../../components/LeftNavbar/LeftNavbar";
 import PostRight from "./components/PostRight/PostRight";
 import PostCenter from "./components/PostCenter/PostCenter";
 
@@ -20,7 +20,7 @@ class Posts extends React.Component {
     return (
       <Wrapper>
         <div className="post-left">
-          <PostLeft />
+          <LeftNavbar />
         </div>
         <div className="post-center">
           <PostCenter />

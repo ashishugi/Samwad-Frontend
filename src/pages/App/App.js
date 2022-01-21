@@ -12,7 +12,7 @@ import {
 
 import { Themes } from "./style";
 import Login from "../Login/Login";
-import Profile from "../profile/profile";
+import Profile from "../Profile/Profile";
 import Posts from "../Posts/Posts";
 import Register from "../Register/Register";
 import { authUser } from "../../actions/login";

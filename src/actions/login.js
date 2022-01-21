@@ -6,6 +6,8 @@ import {
   LOGOUT,
 } from "./actionTypes";
 
+import { APIUrls } from "../helpers/urls";
+
 export const logout = () => {
   return {
     type: LOGOUT,
@@ -43,20 +45,38 @@ export const login = (email, password) => {
     // and based on that given some response.
 
     // using static as of now
-    if (email === "a@a.com" && password === "123456") {
-      setTimeout(() => {
-        console.log("set time out 5 sec");
-        const user = {
-          email,
-          password,
-          _id: 123456,
-          name: "Aman",
-        };
-        localStorage.setItem("loginDetails", JSON.stringify(user));
-        dispatch(loginSuccess({ email, password }));
-      }, 5000);
-      return;
-    }
+    const url = APIUrls.login();
+    // if (email === "a@a.com" && password === "123456") {
+    //   setTimeout(() => {
+    //     console.log("set time out 5 sec");
+    //     const user = {
+    //       email,
+    //       password,
+    //       _id: 123456,
+    //       name: "Aman",
+    //     };
+    //     localStorage.setItem("loginDetails", JSON.stringify(user));
+    //     dispatch(loginSuccess({ email, password }));
+    //   }, 5000);
+    //   return;
+    // }
+
+    fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: {
+        email: email,
+        password: password,
+      },
+    }).then((res) => {
+      console.log("here at frontend login");
+      console.log(res);
+      dispatch(loginSuccess({ email, password }));
+    });
     setTimeout(() => {
       if (email !== "a@a.com") {
         dispatch(loginFailed("Login failed : email do not match"));

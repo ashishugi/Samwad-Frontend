@@ -1,6 +1,6 @@
 // components
-import PostLeftMenu from "../PostLeftMenu/PostLeftMenu";
-import PostLeftMyAccount from "../PostLeftMyAccount/PostLeftMyAccount";
+import NavbarMenu from "../NavbarMenu/NavbarMenu";
+import PostLeftMyAccount from "../MyAccount/MyAccount";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { connect } from "react-redux";
@@ -9,11 +9,11 @@ import Switch from "@mui/material/Switch";
 
 import { Wrapper } from "./style";
 import Logout from "@mui/icons-material/Logout";
-import { logout } from "../../../../actions/login";
-import { changeTheme } from "../../../../actions/theme";
-import CustomizedSwitches from "../../../../components/MaterialUISwitch/MaterialUISwitch";
+import { logout } from "../../actions/login";
+import { changeTheme } from "../../actions/theme";
+import CustomizedSwitches from "../MaterialUISwitch/MaterialUISwitch";
 
-const PostLeft = (props) => {
+const LeftNavbar = (props) => {
   const handleChangeTheme = (e) => {
     props.dispatch(changeTheme(props.theme));
     console.log("channged theme", props.theme);
@@ -26,7 +26,7 @@ const PostLeft = (props) => {
   return (
     <Wrapper>
       <div className="heading">Samwad 💬 </div>
-      <PostLeftMenu />
+      <NavbarMenu />
       <div className="header">
         <div>
           <p>Account</p>
@@ -53,4 +53,4 @@ const mapStateToProps = (state) => {
     theme: state.theme,
   };
 };
-export default connect(mapStateToProps)(PostLeft);
+export default connect(mapStateToProps)(LeftNavbar);

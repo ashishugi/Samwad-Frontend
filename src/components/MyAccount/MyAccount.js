@@ -1,7 +1,7 @@
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Wrapper } from "./style";
 
-const PostLeftMyAccount = () => {
+const MyAccount = () => {
   return (
     <Wrapper>
       {/* <div className="header">
@@ -28,4 +28,4 @@ const PostLeftMyAccount = () => {
   );
 };
 
-export default PostLeftMyAccount;
+export default MyAccount;

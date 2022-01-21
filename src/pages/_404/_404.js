@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router";
 
 import { Wrapper, notLoggedWrapper } from "./styled";
-import PostLeft from "../Posts/components/PostLeft/PostLeft";
+import LeftNavbar from "../../components/LeftNavbar/LeftNavbar";
 
 class _404 extends Component {
   render() {
@@ -20,7 +20,7 @@ class _404 extends Component {
     return (
       <Wrapper>
         <div>
-          <PostLeft />
+          <LeftNavbar />
         </div>
         <div className="page-donot-exist">
           <h1>Sorry :( Page Does not Exist</h1>
