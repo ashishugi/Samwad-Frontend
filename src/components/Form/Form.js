@@ -1,5 +1,6 @@
 import React from "react";
-
+import { connect } from "react-redux";
+import { Redirect } from "react-router";
 import { Wrapper } from "./style";
 
 //material
@@ -12,6 +13,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import PasswordInputField from "../PasswordInputField/PasswordInputField";
 import LoginWithOtherButton from "../LoginWithOtherButton/LoginWithOtherButton";
+
+import { signUp } from "../../actions/signup";
 
 class Form extends React.Component {
   constructor(props) {
@@ -54,7 +57,6 @@ class Form extends React.Component {
     });
   };
   validateEmail = (email) => {
-    
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -91,6 +93,7 @@ class Form extends React.Component {
     } else {
       console.log("error :", this.state.error);
     }
+    this.props.dispatch(signUp(userName, email, password));
     e.preventDefault();
   };
 
@@ -211,4 +214,10 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+const mapStateToProps = (state) => {
+  return {
+    signUp: state.signUp,
+  };
+};
+
+export default connect(mapStateToProps)(Form);

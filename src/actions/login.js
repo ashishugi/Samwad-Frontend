@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {
   LOGIN_START,
@@ -49,29 +49,29 @@ export const login = (email, password) => {
     // using static as of now
     const url = APIUrls.login();
     console.log(url);
-    const body =JSON.stringify({
+    const body = JSON.stringify({
       email: email,
-      password: password
+      password: password,
     });
-    fetch(url,  {
-      method: 'POST',
+    fetch(url, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body,
     })
-    .then((response) => response.json())
-    .then((res)=>{
-      if(res.success) { 
-        localStorage.setItem('token', res.token);
-        dispatch(loginSuccess(res.token));
-        return;
-      }
-      dispatch(loginFailed(res.message));
-    })
-    .catch((err)=>{
-      console.log('got error', err);
-      dispatch(loginFailed(err));
-    })
+      .then((response) => response.json())
+      .then((res) => {
+        if (res.success) {
+          localStorage.setItem("token", res.token);
+          dispatch(loginSuccess(res.token));
+          return;
+        }
+        dispatch(loginFailed(res.message));
+      })
+      .catch((err) => {
+        console.log("got error", err);
+        dispatch(loginFailed("err"));
+      });
   };
 };
