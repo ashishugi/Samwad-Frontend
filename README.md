@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# Getting Started with Samwad
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3>1. Register - Desktop</h3>
+<img width="954" alt="S1" src="https://user-images.githubusercontent.com/46626591/226109829-3455dc89-7c0c-4bdc-92d8-8e9014f27898.png">
+<h3>2. Register - Mobile </h3>
+<img width="464" alt="S2" src="https://user-images.githubusercontent.com/46626591/226109836-a2b5e65c-53c1-40fd-8af3-71bbb8cfcf30.png">
+<h3>3. Login - Desktop </h3>
+<img width="950" alt="S3" src="https://user-images.githubusercontent.com/46626591/226109842-023266b7-bddd-4428-9d35-d93472a2a3a1.png">
+<h3>4. Login - Mobile</h3>
+<img width="240" alt="S4" src="https://user-images.githubusercontent.com/46626591/226109854-c38c66c0-53b0-4b2b-99be-1d2256b740bf.png">
+<h3>5. Home - Light Mode</h3>
+<img width="946" alt="S5" src="https://user-images.githubusercontent.com/46626591/226109857-1428d863-de7b-4d91-986a-f61ce15553d5.png">
+<h3>6. Home - Dark Mode</h3>
+<img width="947" alt="S6" src="https://user-images.githubusercontent.com/46626591/226109861-8ce47951-1c8d-4115-a5ce-774b5e2a2b0b.png">
